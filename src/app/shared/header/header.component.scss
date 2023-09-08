@@ -1,0 +1,65 @@
+header {
+  background-color: #000000;
+  padding: 10px 0px;
+  .row {
+    .currency-box {
+      position: relative;
+      &:after {
+        content: "▼";
+        position: absolute;
+        top: -2px;
+        left: 55px;
+        bottom: 0;
+        font-size: 60%;
+        line-height: 30px;
+        color: #fff;
+        pointer-events: none;
+        padding: 2px 25px;
+      }
+      select {
+        background-color: #b0b435;
+        outline: none;
+        border-radius: 0px;
+        padding: 4px;
+        width: 98px;
+        appearance: none;
+        -webkit-appearance: none;
+        option {
+          background-color: white;
+          color: black;
+          border: none;
+          border-radius: 0px;
+        }
+      }
+    }
+    .phone {
+      a:hover {
+        color: #b0b435 !important;
+        transition: 0.3s;
+      }
+    }
+    .links {
+      ul {
+        li {
+          line-height: 14px;
+        }
+        li:not(:last-child) {
+          border-right: 1px solid #ffffff !important;
+        }
+        li:hover a {
+          color: #b0b435 !important;
+          transition: 0.3s;
+        }
+      }
+    }
+    .offers {
+      ul {
+        li {
+          i {
+            color: #b0b435;
+          }
+        }
+      }
+    }
+  }
+}
