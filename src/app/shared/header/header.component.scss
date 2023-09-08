@@ -3,63 +3,211 @@ header {
   padding: 10px 0px;
   .row {
     .currency-box {
-      position: relative;
-      &:after {
-        content: "▼";
-        position: absolute;
-        top: -2px;
-        left: 55px;
-        bottom: 0;
-        font-size: 60%;
-        line-height: 30px;
-        color: #fff;
-        pointer-events: none;
-        padding: 2px 25px;
+      position: absolute;
+      left: 10px;
+      top: -1px;
+      .mat-mdc-form-field {
+        width: 100px;
+        height: 55px;
       }
-      select {
+      .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+          .mdc-text-field--textarea
+        )
+        .mat-mdc-form-field-infix {
+        padding-top: 10px;
+      }
+      .mat-mdc-text-field-wrapper {
         background-color: #b0b435;
-        outline: none;
         border-radius: 0px;
-        padding: 4px;
-        width: 98px;
-        appearance: none;
-        -webkit-appearance: none;
-        option {
-          background-color: white;
-          color: black;
-          border: none;
-          border-radius: 0px;
-        }
+      }
+      .mat-mdc-select-arrow svg {
+        top: -4px;
+        color: #ffffff;
+      }
+      .cdk-overlay-pane > div.mat-mdc-select-panel {
+        background-color: #ffffff !important;
+      }
+      .mdc-line-ripple {
+        border: none !important;
+      }
+      .mdc-line-ripple::before {
+        border: none !important;
+      }
+      .mdc-line-ripple::after {
+        border: none !important;
+      }
+      .mat-mdc-select-value-text {
+        position: relative;
+        top: -7px;
+        left: 0px;
+        color: white;
+        font-size: 13px;
       }
     }
-    .phone {
-      a:hover {
+  }
+  .phone {
+    margin-left: 110px;
+    a:hover {
+      color: #b0b435 !important;
+      transition: 0.3s;
+    }
+  }
+  .links {
+    ul {
+      li {
+        line-height: 14px;
+      }
+      li:not(:last-child) {
+        border-right: 1px solid #ffffff !important;
+      }
+      li:hover a {
         color: #b0b435 !important;
         transition: 0.3s;
       }
     }
-    .links {
-      ul {
-        li {
-          line-height: 14px;
-        }
-        li:not(:last-child) {
-          border-right: 1px solid #ffffff !important;
-        }
-        li:hover a {
-          color: #b0b435 !important;
-          transition: 0.3s;
+    .login-mobile {
+      .mat-mdc-form-field {
+        width: 140px;
+        height: 58px;
+      }
+      .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+          .mdc-text-field--textarea
+        )
+        .mat-mdc-form-field-infix {
+        padding-top: 10px;
+      }
+      .mat-mdc-text-field-wrapper {
+        background-color: #b0b435;
+        border-radius: 0px;
+      }
+      .mat-mdc-select-arrow svg {
+        top: -3px;
+        color: #ffffff;
+      }
+      .cdk-overlay-pane > div.mat-mdc-select-panel {
+        background-color: #ffffff !important;
+      }
+      .mdc-line-ripple {
+        border: none;
+      }
+      .mdc-line-ripple::before {
+        border: none;
+      }
+      .mdc-line-ripple::after {
+        border: none;
+      }
+      .mat-mdc-select-value-text {
+        position: relative;
+        top: -5px;
+        left: 0px;
+        color: white;
+        font-size: 13px;
+      }
+    }
+  }
+  .offers {
+    ul {
+      li {
+        font-family: Montserrat, sans-serif;
+        opacity: 0;
+        width: 350px;
+        i {
+          color: #b0b435;
         }
       }
     }
-    .offers {
-      ul {
-        li {
-          i {
-            color: #b0b435;
-          }
-        }
-      }
+  }
+  .offers li.active {
+    opacity: 1;
+    animation-name: fadeInOut;
+    animation-iteration-count: infinite;
+  }
+  .offers li.hide {
+    display: none;
+  }
+  .login-regitser {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    .mat-mdc-form-field {
+      width: 140px;
+      height: 58px;
     }
+    .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(
+        .mdc-text-field--textarea
+      )
+      .mat-mdc-form-field-infix {
+      padding-top: 10px;
+    }
+    .mat-mdc-text-field-wrapper {
+      background-color: #b0b435;
+      border-radius: 0px;
+    }
+    .mat-mdc-select-arrow svg {
+      top: -3px;
+      color: #ffffff;
+    }
+    .cdk-overlay-pane > div.mat-mdc-select-panel {
+      background-color: #ffffff !important;
+    }
+    .mdc-line-ripple {
+      border: none;
+    }
+    .mdc-line-ripple::before {
+      border: none;
+    }
+    .mdc-line-ripple::after {
+      border: none;
+    }
+    .mat-mdc-select-value-text {
+      position: relative;
+      top: -5px;
+      left: 0px;
+      color: white;
+      font-size: 13px;
+    }
+  }
+}
+//encapsulated style
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled)
+  .mdc-list-item__primary-text {
+  font-size: 10px !important;
+  padding: 5px !important;
+  color: black !important;
+  white-space: nowrap;
+}
+.mat-mdc-option .mdc-list-item__primary-text {
+  font-size: 12px !important;
+}
+.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after {
+  width: 10px !important;
+  color: black !important;
+}
+//mediaqueery
+
+@media screen and (max-width: 1200px) {
+  .left-section {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .links {
+    height: 70px;
+  }
+}
+
+//animation
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

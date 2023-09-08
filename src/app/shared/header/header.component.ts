@@ -1,60 +1,39 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  keyframes,
-  AnimationBuilder,
-} from '@angular/animations';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [
-    trigger('fadeAnimation', [
-      transition('* => *', [
-        animate(
-          '2s',
-          keyframes([
-            style({ opacity: 0, offset: 0 }),
-            style({ opacity: 1, offset: 0.5 }),
-            style({ opacity: 0, offset: 1 }),
-          ])
-        ),
-      ]),
-    ]),
-  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('offerList') offerList!: ElementRef;
-  constructor(private animationBuilder: AnimationBuilder) {}
-  ngOnInit() {
-    const factory = this.animationBuilder.build([
-      animate(
-        '2s',
-        keyframes([
-          style({ opacity: 0, offset: 0 }),
-          style({ opacity: 1, offset: 0.5 }),
-          style({ opacity: 0, offset: 1 }),
-        ])
-      ),
-    ]);
-
-    const player = factory.create(this.offerList.nativeElement);
-
-    player.onDone(() => {
-      player.destroy();
-      this.ngOnInit(); // Restart the animation
-    });
-
-    player.play();
-  }
   offers: string[] = [
     '20% off Entire Purchase Promo code: offT80',
-    'Another offer',
-    'Yet another offer',
-    // Add more offers here
+    '50% - 80% off on Vegetables',
+    'Off 10%! Shop Vegetables',
+    'Off 50%! Shop Now',
   ];
+  auth: any[] = [];
+  currency: any[] = [];
+  currentIndex = 0;
+  animationDuration = '2s';
+  selectedValue = 'Sign In';
+  selected = '¥ JPY';
+  constructor() {}
+  ngOnInit() {
+    this.startAnimation();
+    this.auth = [
+      { value: 'Regiser Here', viewValue: 'Regiser Here' },
+      { value: 'Sign In', viewValue: 'Sign In' },
+    ];
+    this.currency = [
+      { value: '¥ JPY', viewValue: '¥ JPY' },
+      { value: '$ USD', viewValue: '$ USD' },
+      { value: '€ EUR', viewValue: '€ EUR' },
+    ];
+  }
+  startAnimation() {
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.offers.length;
+    }, 2000); // Adjust the interval as per your preference
+  }
 }

@@ -1,16 +1,22 @@
 <header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 d-flex">
-        <div class="currency-box">
-          <select class="text-light custom-select">
-            <option>¥ JPY</option>
-            <option>$ USD</option>
-            <option>€ EUR</option>
-          </select>
+      <div
+        class="col-lg-6 col-md-6 col-sm-12 d-flex position-relative flex-wrap left-section justify-content-center"
+      >
+        <div class="currency-box d-none d-lg-block">
+          <mat-form-field>
+            <mat-select [(value)]="selected">
+              <mat-option
+                [value]="options.value"
+                *ngFor="let options of currency"
+                >{{ options.value }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
         </div>
         <div
-          class="phone d-flex justify-content-center align-items-center ms-2"
+          class="phone d-flex justify-content-center align-items-center d-none d-lg-flex"
         >
           <p class="m-0 text-light">
             Call US :-
@@ -19,8 +25,12 @@
             >
           </p>
         </div>
-        <div class="links d-flex align-items-center ms-2">
-          <ul class="d-flex p-0 m-0 gap-2 text-nowrap">
+        <div
+          class="links d-flex align-items-center flex-column gap-2 gap-md-4 gap-lg-4 ms-2 my-2"
+        >
+          <ul
+            class="d-flex p-0 m-0 gap-2 text-nowrap flex-wrap justify-content-center"
+          >
             <li class="px-2">
               <a
                 href="#"
@@ -43,20 +53,48 @@
               >
             </li>
           </ul>
+          <div class="login-mobile d-lg-none d-md-none d-block">
+            <mat-form-field>
+              <mat-select [(value)]="selectedValue">
+                <mat-option
+                  [value]="options.value"
+                  *ngFor="let options of auth"
+                  >{{ options.value }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 d-flex">
-        <!-- <div class="offers d-flex align-items-center">
+      <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-between">
+        <div
+          class="offers d-flex align-items-center d-none d-md-flex d-lg-flex"
+        >
           <ul class="m-0 p-0">
             <li
-              #offerList
-              class="text-light opacity-0"
+              class="text-light fw-bold"
               *ngFor="let offer of offers; let i = index"
+              [ngClass]="{
+                active: currentIndex === i,
+                hide: currentIndex !== i
+              }"
+              [style.animation-duration]="animationDuration"
             >
-              <i class="fab fa-opencart me-2"></i> {{ offer }}
+              <i class="fab fa-opencart me-2 fw-bold fs-5"></i> {{ offer }}
             </li>
           </ul>
-        </div> -->
+        </div>
+        <div class="login-regitser d-none d-md-block d-lg-block">
+          <mat-form-field>
+            <mat-select [(value)]="selectedValue">
+              <mat-option
+                [value]="options.value"
+                *ngFor="let options of auth"
+                >{{ options.value }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
     </div>
   </div>
