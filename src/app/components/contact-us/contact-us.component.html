@@ -1,1 +1,151 @@
-<p>contact-us works!</p>
+<section class="py-5">
+  <div class="container">
+    <div class="row mx-5">
+      <div class="col-lg-8 col-sm-12">
+        <div class="contact-form p-2 p-lg-5 p-xl-5">
+          <h1 class="text-uppercase fw-bold">get in touch</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius fugit
+            magnam illum sint harum facere quod ex, inventore dolor quo quis
+            modi.
+          </p>
+          <form
+            class="d-flex flex-column"
+            [formGroup]="contactFrom"
+            (ngSubmit)="submit()"
+          >
+            <div class="name d-flex flex-column align-items-end mb-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                formControlName="name"
+                class="form-control"
+              />
+              <div
+                class="error-message"
+                *ngIf="
+                  contactFrom.get('name')?.invalid &&
+                  contactFrom.get('name')?.touched
+                "
+              >
+                Please enter your name
+              </div>
+            </div>
+            <div class="email d-flex flex-column align-items-end mb-4">
+              <input
+                type="email"
+                placeholder="Your Email"
+                formControlName="email"
+                class="form-control"
+              />
+              <div
+                class="error-message"
+                *ngIf="
+                  contactFrom.get('email')?.invalid &&
+                  contactFrom.get('email')?.touched
+                "
+              >
+                Please enter your email
+              </div>
+            </div>
+            <div class="subject d-flex flex-column align-items-end mb-4">
+              <input
+                type="text"
+                placeholder="Subject"
+                formControlName="subject"
+                class="form-control"
+              />
+              <div
+                class="error-message"
+                *ngIf="
+                  contactFrom.get('subject')?.invalid &&
+                  contactFrom.get('subject')?.touched
+                "
+              >
+                Please enter your Subject
+              </div>
+            </div>
+
+            <div class="message d-flex flex-column align-items-end mb-4">
+              <textarea
+                rows="4"
+                placeholder="Your Message"
+                formControlName="message"
+                class="form-control"
+              ></textarea>
+              <div
+                class="error-message"
+                *ngIf="
+                  contactFrom.get('message')?.invalid &&
+                  contactFrom.get('message')?.touched
+                "
+              >
+                Write your message
+              </div>
+            </div>
+            <button
+              [disabled]="contactFrom.invalid"
+              class="btn text-capitalize m-auto text-nowrap"
+            >
+              send message
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 py-4 px-3 px-lg-0 px-xl-0">
+        <div class="contact-info m-0 mx-xl-4">
+          <h1 class="text-uppercase fw-bold">contact info</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+            commodi adipisci accusamus, iure nesciunt excepturi laborum ea
+            veritatis asperiores voluptatem inventore in totam facere iusto
+            libero dolores cumque cum incidunt.
+          </p>
+          <ul class="m-0 p-0">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Address: Michael I. Days 9000 <br />Preston Street Wichita,<br />
+                KS 87213
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-phone-square"></i>
+              <p>
+                Phone:
+                <a class="text-decoration-none" href="tel:+1-888705770"
+                  >+1-888 705 770</a
+                >
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <p>
+                Email:
+                <a
+                  class="text-decoration-none"
+                  href="mailto:contactinfo@gmail.com"
+                  >contactinfo@gmail.com</a
+                >
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div
+  *ngIf="success"
+  class="alert alert-success w-25 position-fixed top-0 end-0"
+  role="alert"
+>
+  Message has been sent successfully
+</div>
+<div
+  *ngIf="fail"
+  class="alert alert-danger w-25 position-fixed top-0 end-0"
+  role="alert"
+>
+  Please try again!
+</div>

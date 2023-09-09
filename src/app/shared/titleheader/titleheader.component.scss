@@ -2,10 +2,19 @@ section {
   .background {
     padding: 60px 150px;
     width: 100%;
-    background: url(../../../assets/images/header/stawberry.jpg);
+    background: url(../../../assets/images/header/stawberry.jpg) no-repeat
+      center center;
     background-position: center;
     padding: 70px 0px;
     position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+
     .container {
       h2 {
         font-size: 28px;
@@ -15,7 +24,7 @@ section {
       }
       ul {
         display: inline-block;
-        padding: 15px;
+        padding: 10px 15px;
         background-color: #b0b435;
         font-size: 16px;
         line-height: 29px;

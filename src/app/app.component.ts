@@ -18,5 +18,8 @@ export class AppComponent implements DoCheck {
   constructor(private route: Router) {}
   ngDoCheck(): void {
     this.routing = this.route.url.slice(1);
+    if (this.route.url == '/home') {
+      this.routing = '';
+    }
   }
 }
