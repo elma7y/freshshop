@@ -6,10 +6,28 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TitleheaderComponent } from './titleheader/titleheader.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { FooterComponent } from './footer/footer.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
-  declarations: [HeaderComponent, NavbarComponent, TitleheaderComponent],
-  imports: [CommonModule, MaterialModule, FormsModule, AppRoutingModule],
-  exports: [HeaderComponent, NavbarComponent, TitleheaderComponent],
+  declarations: [
+    HeaderComponent,
+    NavbarComponent,
+    TitleheaderComponent,
+    FooterComponent,
+  ],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    AppRoutingModule,
+    CarouselModule,
+  ],
+  exports: [
+    HeaderComponent,
+    NavbarComponent,
+    TitleheaderComponent,
+    FooterComponent,
+  ],
 })
 export class SharedModule {}

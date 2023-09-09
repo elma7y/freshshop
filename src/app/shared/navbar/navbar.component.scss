@@ -8,6 +8,9 @@ nav {
       padding-top: 6px;
       padding-bottom: 6px;
     }
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
     .navbar-nav {
       a.active {
         color: #b0b435;
@@ -63,6 +66,44 @@ nav {
     margin-bottom: 230px !important;
   }
 }
+.fixed {
+  position: fixed;
+  visibility: hidden;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  padding: 0px 0px;
+  background: #ffffff;
+  z-index: 0;
+  transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  -ms-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -op-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -ms-animation-duration: 500ms;
+  -moz-animation-duration: 500ms;
+  -op-animation-duration: 500ms;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -ms-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -op-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -ms-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -op-animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
 //media queries
 @media screen and (max-width: 992px) {
   .logo {
@@ -76,5 +117,16 @@ nav {
     p {
       display: none;
     }
+  }
+}
+//animation
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

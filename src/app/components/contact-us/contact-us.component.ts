@@ -25,7 +25,6 @@ export class ContactUsComponent implements OnDestroy {
     this.contactusService.contactForm = this.contactFrom;
     this.contactSubscribtion = this.contactusService.contactUs().subscribe(
       (res) => {
-        console.log(res);
         if (res.status == 200) {
           this.success = true;
           setTimeout(() => {
@@ -34,7 +33,6 @@ export class ContactUsComponent implements OnDestroy {
         }
       },
       (err) => {
-        console.log(err);
         this.fail = true;
         setTimeout(() => {
           this.fail = false;

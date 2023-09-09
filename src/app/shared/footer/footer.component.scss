@@ -1,0 +1,298 @@
+.footer {
+  background: url(../../../assets/images/footer/ins-bg.jpg) no-repeat center
+    center;
+  background-size: auto auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  padding: 70px 0px;
+  .carasoul {
+    overflow: hidden;
+    .right {
+      background-color: black;
+      color: #ffffff;
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+      z-index: 2;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+    }
+    .right:active {
+      border: none;
+    }
+    .right:not(.right.active) {
+      border: none;
+    }
+    .right:hover {
+      background-color: #b0b435;
+    }
+    .left:hover {
+      background-color: #b0b435;
+    }
+    .left:active {
+      border: none;
+    }
+    .left:not(.left.active) {
+      border: none;
+    }
+
+    .left {
+      background-color: black;
+      color: #ffffff;
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.footer::before {
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+.owl-item {
+  position: relative;
+}
+.owl-item::before {
+  content: "\f16d";
+  font: var(--fa-font-brands);
+  font-family: "Font Awesome 6 brands";
+  color: #000000;
+  font-size: 48px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(211, 59, 51, 0.5);
+  transition: 0.4s;
+}
+.owl-item:hover::before {
+  visibility: visible;
+  top: 0;
+}
+.main-footer {
+  background-color: #000000;
+  .business {
+    h3::before {
+      border-bottom: 2px solid #b0b435;
+      content: "";
+      height: 3px;
+      width: 50%;
+      position: absolute;
+      bottom: 3px;
+      left: 0px;
+    }
+  }
+  .newsletter {
+    h3::before {
+      border-bottom: 2px solid #b0b435;
+      content: "";
+      height: 3px;
+      width: 50%;
+      position: absolute;
+      bottom: 3px;
+      left: 0px;
+    }
+    .mail-box {
+      input {
+        height: 40px;
+        border: none;
+        padding: 0 10px;
+        background: transparent;
+        border-radius: 0;
+        background: #fff;
+        padding: 0 20px;
+        width: 100%;
+        outline: none;
+      }
+      i {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 20px;
+        color: #666666;
+      }
+    }
+    button {
+      position: relative;
+      overflow: hidden;
+      padding: 5px 10px;
+      background-color: #b0b435;
+      color: #ffffff;
+      border-radius: 0;
+      border: none;
+      border: 1px solid #b0b435;
+      transition: background-color 0.8s;
+    }
+    button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background-color: #000000;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.5s;
+      z-index: -1;
+    }
+    button:hover::before {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+    button:hover {
+      background-color: #000000;
+      color: #ffffff;
+      z-index: 1;
+    }
+  }
+  .social {
+    h3::before {
+      border-bottom: 2px solid #b0b435;
+      content: "";
+      height: 3px;
+      width: 50%;
+      position: absolute;
+      bottom: 3px;
+      left: 0px;
+    }
+    ul {
+      li {
+        a {
+          color: #ffffff;
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          border: 2px solid #ffffff;
+          text-align: center;
+          line-height: 32px;
+          transition: 0.3s;
+        }
+        a:hover {
+          color: #b0b435;
+          border-color: #b0b435;
+        }
+      }
+    }
+  }
+  .about {
+    h4::before {
+      border-bottom: 3px solid #b0b435;
+      content: "";
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 3px;
+      left: 0px;
+    }
+  }
+  .info {
+    h4::before {
+      border-bottom: 3px solid #b0b435;
+      content: "";
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 3px;
+      left: 0px;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        transition: 0.5s;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          transition: 0.3s;
+          display: block;
+        }
+        a:hover {
+          color: #b0b435;
+          border-color: #b0b435;
+          transform: translateX(5px);
+        }
+        i {
+          margin-right: 10px;
+        }
+      }
+      li:hover {
+        i {
+          color: #b0b435;
+        }
+      }
+    }
+  }
+  .contacts {
+    h4::before {
+      border-bottom: 3px solid #b0b435;
+      content: "";
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 3px;
+      left: 0px;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        p {
+          font-size: 16px;
+          font-weight: 300;
+          margin: 0;
+        }
+        i {
+          padding-right: 6px;
+          color: #cccccc;
+        }
+        a {
+          font-size: 16px;
+          color: #ffffff;
+          transition: 0.3s;
+        }
+        a:hover {
+          color: #b0b435;
+        }
+      }
+    }
+  }
+}
+.company-copyright {
+  padding: 20px 0px;
+  background-color: #060606;
+  a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+  a:hover {
+    color: #b0b435;
+  }
+}

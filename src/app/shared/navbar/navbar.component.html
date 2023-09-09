@@ -1,12 +1,8 @@
-<nav class="px-lg-5 px-md-5 px-0 py-2">
+<nav #fixedNav class="px-lg-5 px-md-5 px-0 py-2">
   <div class="container d-flex justify-content-between">
     <div class="logo ms-lg-4 m-0 order-lg-0 order-1">
       <a href="#">
-        <img
-          class="ms-lg-5 m-0"
-          src="../../../assets/images/logos/logo.png"
-          alt=""
-        />
+        <img class="m-0" src="../../../assets/images/logos/logo.png" alt="" />
       </a>
     </div>
     <div class="nav ms-lg-auto m-0 order-lg-1 order-0">
@@ -14,11 +10,11 @@
         <div class="container-fluid">
           <button
             (click)="toggleNavbarCollapsing()"
-            class="navbar-toggler"
+            class="navbar-toggler bg-light"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
@@ -28,7 +24,7 @@
           <div
             [class.collapse]="navbarCollapsed"
             class="collapse navbar-collapse"
-            id="navbarNavDropdown"
+            id="navbarSupportedContent"
           >
             <ul class="navbar-nav d-flex gap-4">
               <li class="nav-item">
@@ -120,7 +116,7 @@
         </li>
         <li class="shoping position-relative">
           <a
-            href="#"
+            routerLink="/cart"
             class="d-flex align-items-center text-decoration-none gap-2 text-dark"
           >
             <i class="fa fa-shopping-bag"></i>
