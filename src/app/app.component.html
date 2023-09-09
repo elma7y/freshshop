@@ -1,3 +1,14 @@
 <main>
-  <app-header></app-header>
+  <header>
+    <app-header></app-header>
+  </header>
+  <nav>
+    <app-navbar></app-navbar>
+  </nav>
+  <section>
+    <app-titleheader [routing]="routing"></app-titleheader>
+  </section>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
 </main>

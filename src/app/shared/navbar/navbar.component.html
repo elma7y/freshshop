@@ -1,0 +1,130 @@
+<nav class="px-lg-5 px-md-5 px-0 py-2">
+  <div class="container d-flex justify-content-between">
+    <div class="logo ms-lg-4 m-0 order-lg-0 order-1">
+      <a href="#">
+        <img
+          class="ms-lg-5 m-0"
+          src="../../../assets/images/logos/logo.png"
+          alt=""
+        />
+      </a>
+    </div>
+    <div class="nav ms-lg-auto m-0 order-lg-1 order-0">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button
+            (click)="toggleNavbarCollapsing()"
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+
+          <div
+            [class.collapse]="navbarCollapsed"
+            class="collapse navbar-collapse"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav d-flex gap-4">
+              <li class="nav-item">
+                <a
+                  class="nav-link text-uppercase fw-bold fs-6 text-nowrap"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-uppercase fw-bold fs-6 text-nowrap"
+                  href="#"
+                  >about us</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-uppercase fw-bold fs-6 text-nowrap"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  shop
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-capitalize" href="#"
+                      >sidebar shop</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-capitalize" href="#"
+                      >shop detail</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-capitalize" href="#">cart</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-capitalize" href="#"
+                      >checkout</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-capitalize" href="#"
+                      >my account</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-capitalize" href="#"
+                      >wishlist</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-uppercase fw-bold fs-6 text-nowrap"
+                  href="#"
+                  >gallery</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-uppercase fw-bold fs-6 active text-nowrap"
+                  href="#"
+                  >contact us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      [ngClass]="margin"
+      class="cart d-flex justify-content-center align-items-center ms-lg-4 me-lg-5 ms-md-4 me-md-5 m-0 order-2"
+    >
+      <ul class="d-flex gap-4 align-items-center m-0 p-0">
+        <li class="search">
+          <a href="#"><i class="fa fa-search text-dark fw-bold"></i></a>
+        </li>
+        <li class="shoping position-relative">
+          <a
+            href="#"
+            class="d-flex align-items-center text-decoration-none gap-2 text-dark"
+          >
+            <i class="fa fa-shopping-bag"></i>
+            <p class="m-0 text-nowrap">My Cart</p>
+            <span class="position-absolute products-number">3</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
