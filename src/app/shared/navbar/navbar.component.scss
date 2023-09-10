@@ -62,10 +62,11 @@ nav {
       }
     }
   }
-  .margin {
-    margin-bottom: 230px !important;
+  .bottom-border {
+    border-bottom: solid 1px #e0e0e0;
   }
 }
+
 .fixed {
   position: fixed;
   visibility: hidden;
@@ -109,6 +110,22 @@ nav {
   .logo {
     img {
       width: 160px;
+    }
+  }
+  .dropdown-toggle::after {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+  #dropdowns {
+    li {
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 6px 25px;
+        color: #6f6f6f;
+        border-bottom: solid 1px #e0e0e0;
+      }
     }
   }
 }

@@ -9,7 +9,6 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <button
-            (click)="toggleNavbarCollapsing()"
             class="navbar-toggler bg-light"
             type="button"
             data-bs-toggle="collapse"
@@ -20,12 +19,7 @@
           >
             <span class="fa fa-bars"></span>
           </button>
-
-          <div
-            [class.collapse]="navbarCollapsed"
-            class="collapse navbar-collapse"
-            id="navbarSupportedContent"
-          >
+          <div class="d-lg-block d-none">
             <ul class="navbar-nav d-flex gap-4">
               <li class="nav-item">
                 <a
@@ -107,7 +101,6 @@
       </nav>
     </div>
     <div
-      [ngClass]="margin"
       class="cart d-flex justify-content-center align-items-center ms-lg-4 me-lg-5 ms-md-4 me-md-5 m-0 order-2"
     >
       <ul class="d-flex gap-4 align-items-center m-0 p-0">
@@ -126,5 +119,64 @@
         </li>
       </ul>
     </div>
+  </div>
+  <div class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
+    <ul class="navbar-nav d-flex gap-0 container">
+      <li class="nav-item">
+        <a
+          class="nav-link text-uppercase fw-bold fs-6 text-nowrap bottom-border"
+          aria-current="page"
+          routerLink="/home"
+          routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-uppercase fw-bold fs-6 text-nowrap bottom-border"
+          routerLink="/about-us"
+          routerLinkActive="active"
+          >about us</a
+        >
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle text-uppercase fw-bold fs-6 text-nowrap bottom-border"
+          href="#"
+          role="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#dropdowns"
+          aria-controls="dropdowns"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          shop
+        </a>
+        <ul id="dropdowns" class="collapse">
+          <li><a href="shop.html">Sidebar Shop</a></li>
+          <li><a href="shop-detail.html">Shop Detail</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="my-account.html">My Account</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-uppercase fw-bold fs-6 text-nowrap bottom-border"
+          routerLink="/gallery"
+          routerLinkActive="active"
+          >gallery</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-uppercase fw-bold fs-6 text-nowrap bottom-border"
+          routerLink="/contact-us"
+          routerLinkActive="active"
+          >contact us</a
+        >
+      </li>
+    </ul>
   </div>
 </nav>
